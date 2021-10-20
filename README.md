@@ -24,9 +24,12 @@ To compute the top eigenvalues and eigenvectors of VAE models, run this command:
 To comput the OOD performance metrics (AUROC, AUPR and FPR80) of these experiments, run this command: python get_metrics.py 
 
 5. Pre-trained models We provided the pretrained VAE, trained on CIFAR-100. 
-6.The model can be loaded using the following code. 
 
-parser.add_argument('--state_E', default='./models/cifar100_netE.pth', help='path to encoder checkpoint') parser.add_argument('--state_G', default='./models/cifar100_netG.pth', help='path to encoder checkpoint') 
+The model can be loaded using the following code. 
+
+parser.add_argument('--state_E', default='./models/cifar100_netE.pth', help='path to encoder checkpoint') 
+
+parser.add_argument('--state_G', default='./models/cifar100_netG.pth', help='path to encoder checkpoint') 
 
 netG = DVAE.DCGAN_G(opt.imageSize, nz, nc, ngf, ngpu) 
 
